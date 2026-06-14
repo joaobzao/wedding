@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>João &amp; Sofia · 10 de Outubro de 2026</title>
+  <meta name="description" content="João e Sofia vão casar! 10 de Outubro de 2026 — Igreja de São José das Taipas, Porto. Festa na Casa das Tílias, Maia. Confirme a sua presença.">
+  <meta property="og:title" content="João & Sofia — 10.10.2026">
+  <meta property="og:description" content="Vamos casar! Cerimónia na Igreja de São José das Taipas (Porto) às 14h00 e festa na Casa das Tílias (Maia). Junte-se a nós!">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/momento-beijo.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===== Navegação ===== -->
+  <header class="nav" id="nav">
+    <a class="nav__monogram" href="#inicio" aria-label="Início">J <span>&amp;</span> S</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav__links" id="navLinks">
+      <a href="#contagem">O Grande Dia</a>
+      <a href="#locais">Locais</a>
+      <a href="#programa">Programa</a>
+      <a href="#luademel">Lua de Mel</a>
+      <a class="nav__rsvp" href="#rsvp">RSVP</a>
+    </nav>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="inicio">
+    <div class="hero__inner">
+      <p class="hero__eyebrow">Vamos casar</p>
+      <h1 class="hero__names">João <span class="hero__amp">&amp;</span> Sofia</h1>
+      <div class="divider divider--light">
+        <span class="divider__line"></span>
+        <span class="divider__diamond">◆</span>
+        <span class="divider__line"></span>
+      </div>
+      <p class="hero__date">10 de Outubro de 2026 · Porto</p>
+    </div>
+    <a class="hero__scroll" href="#contagem" aria-label="Continuar para baixo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+    </a>
+  </section>
+
+  <!-- ===== Contagem decrescente ===== -->
+  <section class="section section--alt" id="contagem">
+    <div class="section__inner reveal">
+      <p class="section__eyebrow">Faltam apenas</p>
+      <h2 class="section__title">O Grande Dia</h2>
+      <div class="divider">
+        <span class="divider__line"></span>
+        <span class="divider__diamond">◆</span>
+        <span class="divider__line"></span>
+      </div>
+      <div class="countdown" id="countdown">
+        <div class="countdown__unit"><span class="countdown__value" id="cdDias">–</span><span class="countdown__label">Dias</span></div>
+        <div class="countdown__unit"><span class="countdown__value" id="cdHoras">–</span><span class="countdown__label">Horas</span></div>
+        <div class="countdown__unit"><span class="countdown__value" id="cdMinutos">–</span><span class="countdown__label">Minutos</span></div>
+        <div class="countdown__unit"><span class="countdown__value" id="cdSegundos">–</span><span class="countdown__label">Segundos</span></div>
+      </div>
+      <p class="countdown__done" id="countdownDone" hidden>Já casámos! Obrigado a todos os que celebraram connosco. ♥</p>
+    </div>
+  </section>
+
+  <!-- ===== Foto · O nosso amor ===== -->
+  <section class="photoband photoband--beijo" role="img" aria-label="João e Sofia a beijar-se numa estrada ladeada por árvores">
+    <div class="photoband__caption reveal">
+      <span class="photoband__line" aria-hidden="true"></span>
+      <p class="photoband__quote">E no meio do caminho, encontrámo-nos.</p>
+    </div>
+  </section>
+
+  <!-- ===== Locais ===== -->
+  <section class="section" id="locais">
+    <div class="section__inner reveal">
+      <p class="section__eyebrow">Onde &amp; quando</p>
+      <h2 class="section__title">Cerimónia &amp; Festa</h2>
+      <div class="divider">
+        <span class="divider__line"></span>
+        <span class="divider__diamond">◆</span>
+        <span class="divider__line"></span>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="card__icon" aria-hidden="true">
+            <!-- igreja -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M10 4h4"/><path d="M12 6l-6 5v11h12V11l-6-5z"/><path d="M10 22v-5a2 2 0 014 0v5"/></svg>
+          </div>
+          <h3 class="card__title">Cerimónia Religiosa</h3>
+          <p class="card__time">14h00</p>
+          <p class="card__place">Igreja de São José das Taipas</p>
+          <p class="card__city">Porto</p>
+          <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Igreja+de+S%C3%A3o+Jos%C3%A9+das+Taipas+Porto" target="_blank" rel="noopener">Ver no mapa</a>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon" aria-hidden="true">
+            <!-- taças -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8l-1 7a3 3 0 01-6 0L8 3z"/><path d="M12 13v7M9 20h6"/></svg>
+          </div>
+          <h3 class="card__title">Copo de Água &amp; Festa</h3>
+          <p class="card__time">a partir das 15h30</p>
+          <p class="card__place">Casa das Tílias</p>
+          <p class="card__city">Maia</p>
+          <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Casa+das+T%C3%ADlias+Maia" target="_blank" rel="noopener">Ver no mapa</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Programa ===== -->
+  <section class="section section--alt" id="programa">
+    <div class="section__inner reveal">
+      <p class="section__eyebrow">Como vai ser o dia</p>
+      <h2 class="section__title">Programa</h2>
+      <div class="divider">
+        <span class="divider__line"></span>
+        <span class="divider__diamond">◆</span>
+        <span class="divider__line"></span>
+      </div>
+      <ol class="timeline">
+        <li class="timeline__item reveal">
+          <span class="timeline__time">13h30</span>
+          <div class="timeline__body"><h3>Chegada dos convidados</h3><p>Igreja de São José das Taipas, Porto</p></div>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__time">14h00</span>
+          <div class="timeline__body"><h3>Cerimónia religiosa</h3><p>O momento do "sim"</p></div>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__time">15h30</span>
+          <div class="timeline__body"><h3>Receção &amp; cocktail</h3><p>Casa das Tílias, Maia</p></div>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__time">18h00</span>
+          <div class="timeline__body"><h3>Jantar</h3><p>À mesa com a família e os amigos</p></div>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__time">21h00</span>
+          <div class="timeline__body"><h3>Bolo &amp; brinde</h3><p>Um doce momento para celebrar</p></div>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__time">22h00</span>
+          <div class="timeline__body"><h3>Festa</h3><p>Pista de dança aberta até de madrugada</p></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== Foto · A próxima aventura ===== -->
+  <section class="photoband photoband--fuji" role="img" aria-label="João e Sofia a relaxar num onsen com vista para o Monte Fuji">
+    <div class="photoband__caption reveal">
+      <span class="photoband__line" aria-hidden="true"></span>
+      <p class="photoband__quote">Cada lugar é melhor ao teu lado.</p>
+    </div>
+  </section>
+
+  <!-- ===== Lua de Mel ===== -->
+  <section class="section" id="luademel">
+    <div class="section__inner reveal">
+      <p class="section__eyebrow">A nossa próxima aventura</p>
+      <h2 class="section__title">Lua de Mel</h2>
+      <div class="divider">
+        <span class="divider__line"></span>
+        <span class="divider__diamond">◆</span>
+        <span class="divider__line"></span>
+      </div>
+      <p class="honeymoon__intro">A vossa presença no nosso grande dia é, para nós, o presente mais bonito. Mas se quiserem oferecer-nos algo mais, sonhamos com uma lua de mel inesquecível — e adoraríamos levar-vos connosco em cada passo desta viagem.</p>
+
+      <ol class="route">
+        <li class="route__stop reveal">
+          <span class="route__num">01</span>
+          <span class="route__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15.5v-1.7l-8-4.6V3.6a1.5 1.5 0 00-3 0v5.6l-8 4.6v1.7l8-2.4v4.1l-2 1.4v1.3l3.5-1 3.5 1v-1.3l-2-1.4v-4.1l8 2.4z"/></svg>
+          </span>
+          <span class="route__place">Porto → Los Angeles</span>
+          <span class="route__note">O início da aventura</span>
+        </li>
+        <li class="route__stop reveal">
+          <span class="route__num">02</span>
+          <span class="route__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13.5l1.7-4.3A2 2 0 016.6 8h10.8a2 2 0 011.9 1.2L21 13.5"/><path d="M2 13.5h20v3.5a1 1 0 01-1 1h-1.2a2 2 0 01-3.8 0H8a2 2 0 01-3.8 0H3a1 1 0 01-1-1v-3.5z"/><path d="M6.5 16h.01M17.5 16h.01"/></svg>
+          </span>
+          <span class="route__place">Costa do Pacífico</span>
+          <span class="route__note">Road trip pela estrada mais bonita</span>
+        </li>
+        <li class="route__stop reveal">
+          <span class="route__num">03</span>
+          <span class="route__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 19h20"/><path d="M6 19V7M18 19V7"/><path d="M2 13c2.5-3.5 6-3.5 6-3.5M22 13c-2.5-3.5-6-3.5-6-3.5M6 8c2.4 1.4 4.2 1.9 6 1.9s3.6-.5 6-1.9"/><path d="M10 19v-4M14 19v-4"/></svg>
+          </span>
+          <span class="route__place">São Francisco</span>
+          <span class="route__note">A cidade da ponte dourada</span>
+        </li>
+        <li class="route__stop reveal">
+          <span class="route__num">04</span>
+          <span class="route__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.4L19.5 9l-4.5 3.4L16.6 18 12 14.8 7.4 18l1.6-5.6L4.5 9l5.6-.6z"/><path d="M5 4.5l.01.01M19.5 5l.01.01M20 19l.01.01"/></svg>
+          </span>
+          <span class="route__place">Las Vegas</span>
+          <span class="route__note">Luzes, sorte e muita diversão</span>
+        </li>
+        <li class="route__stop reveal">
+          <span class="route__num">05</span>
+          <span class="route__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 19l5.5-9 3.2 4.4L15 8l6.5 11z"/><circle cx="17.5" cy="6" r="1.7"/></svg>
+          </span>
+          <span class="route__place">Grand Canyon</span>
+          <span class="route__note">Diante de uma maravilha do mundo</span>
+        </li>
+        <li class="route__stop reveal">
+          <span class="route__num">06</span>
+          <span class="route__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V9.5"/><path d="M12 9.5c-.5-2.8-3.6-4.4-6.4-3.3 1-2.8 4.6-3 6.4-.7 1.8-2.3 5.4-2.1 6.4.7-2.8-1.1-5.9.5-6.4 3.3z"/><path d="M3 21c2.2-2.6 5.6-2.6 9-2.6s6.8 0 9 2.6"/></svg>
+          </span>
+          <span class="route__place">Havai</span>
+          <span class="route__note">O paraíso para terminar</span>
+        </li>
+      </ol>
+
+      <div class="gift reveal">
+        <p class="gift__lead">Em vez de uma prenda, ficaríamos felizes com um contributo para esta viagem. Cada gesto, por mais pequeno que seja, ajuda-nos a guardar memórias para toda a vida.</p>
+        <!-- TODO: substituir pelos vossos dados reais (IBAN e número MB WAY) — ver README.md -->
+        <div class="gift__methods">
+          <div class="gift__method">
+            <span class="gift__label">Transferência bancária</span>
+            <span class="gift__value">PT50 0000 0000 0000 0000 0000 0</span>
+            <span class="gift__holder">João &amp; Sofia</span>
+          </div>
+          <div class="gift__method">
+            <span class="gift__label">MB WAY</span>
+            <span class="gift__value">912 345 678</span>
+            <span class="gift__holder">João &amp; Sofia</span>
+          </div>
+        </div>
+        <p class="gift__thanks">Do fundo do coração, obrigado ♥</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Foto · Juntos em qualquer lugar ===== -->
+  <section class="photoband photoband--neve" role="img" aria-label="João e Sofia na neve, ao pôr do sol, com pranchas de snowboard">
+    <div class="photoband__caption reveal">
+      <span class="photoband__line" aria-hidden="true"></span>
+      <p class="photoband__quote">Juntos, em qualquer aventura.</p>
+    </div>
+  </section>
+
+  <!-- ===== RSVP ===== -->
+  <section class="section section--alt" id="rsvp">
+    <div class="section__inner section__inner--narrow reveal">
+      <p class="section__eyebrow">Contamos consigo</p>
+      <h2 class="section__title">Confirme a sua presença</h2>
+      <div class="divider">
+        <span class="divider__line"></span>
+        <span class="divider__diamond">◆</span>
+        <span class="divider__line"></span>
+      </div>
+      <p class="rsvp__note">Por favor confirme até <strong>10 de Setembro de 2026</strong>.</p>
+      <!-- TODO: crie um formulário gratuito em https://formspree.io e substitua SEU_ID abaixo (ver README.md) -->
+      <form class="form" action="https://formspree.io/f/SEU_ID" method="POST">
+        <div class="form__row">
+          <div class="form__field">
+            <label for="nome">Nome *</label>
+            <input type="text" id="nome" name="nome" required autocomplete="name">
+          </div>
+          <div class="form__field">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="form__field">
+            <span class="form__legend">Vai estar presente? *</span>
+            <div class="form__radios">
+              <label class="form__radio"><input type="radio" name="presenca" value="Sim, conto estar presente" required> Sim, claro!</label>
+              <label class="form__radio"><input type="radio" name="presenca" value="Infelizmente não posso"> Infelizmente não</label>
+            </div>
+          </div>
+          <div class="form__field">
+            <label for="acompanhantes">Nº de acompanhantes</label>
+            <input type="number" id="acompanhantes" name="acompanhantes" min="0" max="10" value="0">
+          </div>
+        </div>
+        <div class="form__field">
+          <label for="restricoes">Restrições alimentares</label>
+          <input type="text" id="restricoes" name="restricoes" placeholder="Vegetariano, alergias, …">
+        </div>
+        <div class="form__field">
+          <label for="mensagem">Mensagem para os noivos</label>
+          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Deixe-nos umas palavras ♥"></textarea>
+        </div>
+        <button class="btn btn--solid" type="submit">Confirmar presença</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p class="footer__flourish" aria-hidden="true">❧ ✿ ❧</p>
+    <p class="footer__names">João <span>&amp;</span> Sofia</p>
+    <p class="footer__date">10 · 10 · 2026 — Porto</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
