@@ -31,45 +31,50 @@ function updateCountdown() {
 const countdownTimer = setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// ===== Navegação =====
-const nav = document.getElementById("nav");
-const navToggle = document.getElementById("navToggle");
-const navLinks = document.getElementById("navLinks");
+// ===== Sobreposições (controladas pelo # do endereço) =====
+// Usar o hash mantém o botão "voltar" e permite partilhar ligações diretas.
+const OVERLAY_IDS = ["programa", "luademel", "rsvp"];
+const overlays = OVERLAY_IDS
+  .map((id) => document.getElementById(id))
+  .filter(Boolean);
 
-function onScroll() {
-  nav.classList.toggle("nav--scrolled", window.scrollY > 40);
+function syncOverlays() {
+  const current = decodeURIComponent(location.hash.slice(1));
+  let anyOpen = false;
+
+  overlays.forEach((el) => {
+    const open = el.id === current;
+    el.classList.toggle("is-open", open);
+    el.setAttribute("aria-hidden", open ? "false" : "true");
+    if (open) {
+      anyOpen = true;
+      const scroll = el.querySelector(".overlay__scroll");
+      if (scroll) scroll.scrollTop = 0;
+    }
+  });
+
+  // garante que o conteúdo por trás não é focável enquanto há modal aberto
+  document.querySelector(".invite").toggleAttribute("inert", anyOpen);
 }
-window.addEventListener("scroll", onScroll, { passive: true });
-onScroll();
 
-navToggle.addEventListener("click", () => {
-  const open = nav.classList.toggle("nav--open");
-  navToggle.setAttribute("aria-expanded", open);
-});
+window.addEventListener("hashchange", syncOverlays);
+syncOverlays();
 
-// fecha o menu móvel ao escolher uma secção
-navLinks.addEventListener("click", (e) => {
-  if (e.target.tagName === "A") {
-    nav.classList.remove("nav--open");
-    navToggle.setAttribute("aria-expanded", "false");
+// Fechar: ligações com [data-close] limpam o hash; Esc faz o mesmo.
+function closeOverlay() {
+  if (OVERLAY_IDS.includes(decodeURIComponent(location.hash.slice(1)))) {
+    history.pushState("", document.title, location.pathname + location.search);
+    syncOverlays();
   }
+}
+
+document.querySelectorAll("[data-close]").forEach((el) => {
+  el.addEventListener("click", (e) => {
+    e.preventDefault();
+    closeOverlay();
+  });
 });
 
-// ===== Animação de entrada ao fazer scroll =====
-const revealEls = document.querySelectorAll(".reveal");
-
-if ("IntersectionObserver" in window) {
-  document.body.classList.add("js-reveal");
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("reveal--visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12 }
-  );
-  revealEls.forEach((el) => observer.observe(el));
-}
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeOverlay();
+});
