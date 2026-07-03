@@ -528,7 +528,7 @@ img { max-width: 100%; display: block; }
   /* fotos passam a fundo de ecrã inteiro */
   .invite__photos { position: absolute; inset: 0; z-index: 0; }
   .invite__photos::after {
-    background: linear-gradient(180deg, rgba(250, 247, 242, 0.9), rgba(250, 247, 242, 0.82) 45%, rgba(250, 247, 242, 0.94));
+    background: linear-gradient(180deg, rgba(250, 247, 242, 0.95), rgba(250, 247, 242, 0.92) 45%, rgba(250, 247, 242, 0.96));
   }
 
   .invite__content {
