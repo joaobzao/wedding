@@ -140,6 +140,10 @@ img { max-width: 100%; display: block; }
 
 .amp { font-family: var(--script); font-size: 0.62em; color: var(--gold); margin: 0 0.06em; }
 
+/* segundo bloco (Baptizado) — mesmo destaque que o casamento */
+.eyebrow--baptism { margin-top: clamp(0.6rem, 1.8vh, 1.1rem); }
+.names--baptism { margin-top: 0.2rem; }
+
 .date {
   font-size: clamp(0.66rem, 1.4vw, 0.82rem);
   letter-spacing: 0.3em;

@@ -1,6 +1,6 @@
 # João & Sofia — 10.10.2026 💍
 
-Site do casamento: cerimónia na **Igreja de São José das Taipas** (Porto, 14h00) e festa na **Casa das Tílias** (Maia).
+Site do casamento **e baptizado da nossa filha Maria Luísa** (no mesmo dia): cerimónia na **Igreja de São José das Taipas** (Porto, 14h00) e festa na **Casa das Tílias** (Maia).
 
 Site estático — sem dependências nem build. HTML + CSS + JavaScript puro.
 
