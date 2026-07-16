@@ -33,7 +33,7 @@ updateCountdown();
 
 // ===== Sobreposições (controladas pelo # do endereço) =====
 // Usar o hash mantém o botão "voltar" e permite partilhar ligações diretas.
-const OVERLAY_IDS = ["programa", "luademel", "rsvp"];
+const OVERLAY_IDS = ["luademel", "rsvp"];
 const overlays = OVERLAY_IDS
   .map((id) => document.getElementById(id))
   .filter(Boolean);
