@@ -102,20 +102,12 @@ const I18N = {
 const LANG_STORAGE_KEY = "wedding-lang";
 
 function detectLang() {
+  // Por defeito PT (ignora o idioma do navegador); respeita a escolha guardada.
   try {
     const saved = localStorage.getItem(LANG_STORAGE_KEY);
     if (saved === "pt" || saved === "en") return saved;
   } catch (_) { /* localStorage indisponível */ }
 
-  const langs = navigator.languages && navigator.languages.length
-    ? navigator.languages
-    : [navigator.language || "pt"];
-  // EN só se o inglês vier antes do português nas preferências.
-  for (const l of langs) {
-    const code = (l || "").toLowerCase();
-    if (code.startsWith("en")) return "en";
-    if (code.startsWith("pt")) return "pt";
-  }
   return "pt";
 }
 
