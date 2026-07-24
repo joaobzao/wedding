@@ -60,19 +60,21 @@ img { max-width: 100%; display: block; }
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0;
-  animation: photoFade 24s infinite;
+  animation: photoFade 40s infinite;
   will-change: opacity, transform;
 }
 
-.invite__photo--1 { background-image: url("../img/momento-beijo.jpg"); background-position: center 30%; animation-delay: 0s; }
-.invite__photo--2 { background-image: url("../img/momento-fuji.jpg");  background-position: center 32%; animation-delay: 8s; }
+.invite__photo--1 { background-image: url("../img/momento-beijo.jpg"); background-position: center 30%; animation-delay: 0s;  }
+.invite__photo--2 { background-image: url("../img/momento-fuji.jpg");  background-position: center 32%; animation-delay: 8s;  }
 .invite__photo--3 { background-image: url("../img/momento-neve.jpg");  background-position: center 42%; animation-delay: 16s; }
+.invite__photo--4 { background-image: url("../img/momento-beer.jpg");  background-position: center 35%; animation-delay: 24s; }
+.invite__photo--5 { background-image: url("../img/momento-tres.jpg");  background-position: center 35%; animation-delay: 32s; }
 
 @keyframes photoFade {
   0%   { opacity: 0; transform: scale(1.03); }
-  4%   { opacity: 1; }
-  29%  { opacity: 1; transform: scale(1.07); }
-  35%  { opacity: 0; }
+  3%   { opacity: 1; }
+  17%  { opacity: 1; transform: scale(1.07); }
+  20%  { opacity: 0; }
   100% { opacity: 0; }
 }
 
@@ -517,7 +519,7 @@ img { max-width: 100%; display: block; }
 @media (prefers-reduced-motion: reduce) {
   .invite__photo { animation: none; }
   .invite__photo--1 { opacity: 1; }
-  .invite__photo--2, .invite__photo--3 { opacity: 0; }
+  .invite__photo--2, .invite__photo--3, .invite__photo--4, .invite__photo--5 { opacity: 0; }
   .overlay, .overlay__panel { transition: none; }
 }
 
@@ -546,3 +548,38 @@ img { max-width: 100%; display: block; }
 @media (max-width: 480px) {
   .form__row { grid-template-columns: 1fr; gap: 0; }
 }
+
+/* ===== Selector de idioma (discreto, canto inferior direito) ===== */
+.lang-switch {
+  position: fixed;
+  bottom: clamp(0.7rem, 2.6vh, 1.3rem);
+  right: clamp(0.8rem, 2.6vw, 1.4rem);
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  opacity: 0.4;
+  transition: opacity 0.35s ease;
+}
+.lang-switch:hover,
+.lang-switch:focus-within { opacity: 1; }
+.lang-switch__btn {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--charcoal-soft);
+  background: none;
+  border: 0;
+  padding: 0.25em 0.1em;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+.lang-switch__btn:hover { color: var(--sage-deep); }
+.lang-switch__btn.is-active {
+  color: var(--charcoal);
+  font-weight: 500;
+  cursor: default;
+}
+.lang-switch__sep { color: var(--gold-soft); font-size: 0.62rem; }

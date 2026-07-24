@@ -17,6 +17,13 @@
 </head>
 <body>
 
+  <!-- ===== Selector de idioma (discreto) ===== -->
+  <div class="lang-switch" role="group" aria-label="Idioma / Language">
+    <button type="button" class="lang-switch__btn" data-lang="pt" lang="pt">PT</button>
+    <span class="lang-switch__sep" aria-hidden="true">·</span>
+    <button type="button" class="lang-switch__btn" data-lang="en" lang="en">EN</button>
+  </div>
+
   <!-- ===== Convite — um único ecrã ===== -->
   <main class="invite">
 
@@ -25,49 +32,51 @@
       <div class="invite__photo invite__photo--1"></div>
       <div class="invite__photo invite__photo--2"></div>
       <div class="invite__photo invite__photo--3"></div>
+      <div class="invite__photo invite__photo--4"></div>
+      <div class="invite__photo invite__photo--5"></div>
     </div>
 
     <!-- Conteúdo do convite -->
     <section class="invite__content">
       <div class="invite__inner">
-        <p class="eyebrow">Casamento</p>
+        <p class="eyebrow" data-i18n="wedding">Casamento</p>
         <h1 class="names">Sofia <span class="amp">&amp;</span> João</h1>
-        <p class="eyebrow eyebrow--baptism">Baptizado</p>
+        <p class="eyebrow eyebrow--baptism" data-i18n="baptism">Baptizado</p>
         <p class="names names--baptism">Maria Luísa</p>
         <div class="divider">
           <span class="divider__line"></span>
           <span class="divider__diamond">◆</span>
           <span class="divider__line"></span>
         </div>
-        <p class="date">10 de Outubro de 2026 · Porto</p>
+        <p class="date" data-i18n="date">10 de Outubro de 2026 · Porto</p>
 
-        <div class="countdown" id="countdown" aria-label="Contagem decrescente para o casamento">
-          <div class="countdown__unit"><span class="countdown__value" id="cdDias">–</span><span class="countdown__label">Dias</span></div>
-          <div class="countdown__unit"><span class="countdown__value" id="cdHoras">–</span><span class="countdown__label">Horas</span></div>
-          <div class="countdown__unit"><span class="countdown__value" id="cdMinutos">–</span><span class="countdown__label">Min</span></div>
-          <div class="countdown__unit"><span class="countdown__value" id="cdSegundos">–</span><span class="countdown__label">Seg</span></div>
+        <div class="countdown" id="countdown" data-i18n-aria="countdownAria" aria-label="Contagem decrescente para o casamento">
+          <div class="countdown__unit"><span class="countdown__value" id="cdDias">–</span><span class="countdown__label" data-i18n="days">Dias</span></div>
+          <div class="countdown__unit"><span class="countdown__value" id="cdHoras">–</span><span class="countdown__label" data-i18n="hours">Horas</span></div>
+          <div class="countdown__unit"><span class="countdown__value" id="cdMinutos">–</span><span class="countdown__label" data-i18n="min">Min</span></div>
+          <div class="countdown__unit"><span class="countdown__value" id="cdSegundos">–</span><span class="countdown__label" data-i18n="sec">Seg</span></div>
         </div>
-        <p class="countdown__done" id="countdownDone" hidden>Já casámos e baptizámos a nossa Maria Luísa! Obrigado por celebrarem connosco. ♥</p>
+        <p class="countdown__done" id="countdownDone" data-i18n="countdownDone" hidden>Já casámos e baptizámos a nossa Maria Luísa! Obrigado por celebrarem connosco. ♥</p>
 
         <div class="venues">
           <div class="venue">
-            <span class="venue__label">Cerimónia &amp; Baptizado</span>
+            <span class="venue__label" data-i18n="ceremonyLabel">Cerimónia &amp; Baptizado</span>
             <span class="venue__name">Igreja de São José das Taipas</span>
-            <span class="venue__meta">Porto · 14h00</span>
-            <a class="venue__map" href="https://www.google.com/maps/search/?api=1&amp;query=Igreja+de+S%C3%A3o+Jos%C3%A9+das+Taipas+Porto" target="_blank" rel="noopener">Ver no mapa</a>
+            <span class="venue__meta" data-i18n="ceremonyMeta">Porto · 14h00</span>
+            <a class="venue__map" data-i18n="viewMap" href="https://www.google.com/maps/search/?api=1&amp;query=Igreja+de+S%C3%A3o+Jos%C3%A9+das+Taipas+Porto" target="_blank" rel="noopener">Ver no mapa</a>
           </div>
           <span class="venues__sep" aria-hidden="true">◆</span>
           <div class="venue">
-            <span class="venue__label">Recepção</span>
+            <span class="venue__label" data-i18n="receptionLabel">Recepção</span>
             <span class="venue__name">Casa das Tílias</span>
-            <span class="venue__meta">Maia · a partir das 15h30</span>
-            <a class="venue__map" href="https://www.google.com/maps/search/?api=1&amp;query=Casa+das+T%C3%ADlias+Maia" target="_blank" rel="noopener">Ver no mapa</a>
+            <span class="venue__meta" data-i18n="receptionMeta">Maia · a partir das 15h30</span>
+            <a class="venue__map" data-i18n="viewMap" href="https://www.google.com/maps/search/?api=1&amp;query=Casa+das+T%C3%ADlias+Maia" target="_blank" rel="noopener">Ver no mapa</a>
           </div>
         </div>
 
-        <nav class="actions" aria-label="Mais informações">
-          <a class="action" href="#luademel">Presente</a>
-          <a class="action action--primary" href="#rsvp">Confirmar presença</a>
+        <nav class="actions" data-i18n-aria="moreInfo" aria-label="Mais informações">
+          <a class="action" data-i18n="gift" href="#luademel">Presente</a>
+          <a class="action action--primary" data-i18n="rsvpAction" href="#rsvp">Confirmar presença</a>
         </nav>
       </div>
     </section>
@@ -77,18 +86,18 @@
 
   <!-- Lua de Mel -->
   <div class="overlay" id="luademel" role="dialog" aria-modal="true" aria-labelledby="luademel-title" aria-hidden="true">
-    <a class="overlay__backdrop" href="#" data-close aria-label="Fechar"></a>
+    <a class="overlay__backdrop" href="#" data-close data-i18n-aria="close" aria-label="Fechar"></a>
     <div class="overlay__panel">
-      <a class="overlay__close" href="#" data-close aria-label="Fechar">&times;</a>
+      <a class="overlay__close" href="#" data-close data-i18n-aria="close" aria-label="Fechar">&times;</a>
       <div class="overlay__scroll">
-        <p class="section__eyebrow">A nossa próxima aventura</p>
-        <h2 class="section__title" id="luademel-title">Lua de Mel</h2>
+        <p class="section__eyebrow" data-i18n="honeymoonEyebrow">A nossa próxima aventura</p>
+        <h2 class="section__title" id="luademel-title" data-i18n="honeymoonTitle">Lua de Mel</h2>
         <div class="divider">
           <span class="divider__line"></span>
           <span class="divider__diamond">◆</span>
           <span class="divider__line"></span>
         </div>
-        <p class="honeymoon__intro">A vossa presença no nosso grande dia é, para nós, o presente mais bonito. Mas se quiserem oferecer-nos algo mais, podem contribuir para a nossa lua de mel — adoraríamos levar-vos connosco em cada passo desta viagem.</p>
+        <p class="honeymoon__intro" data-i18n="honeymoonIntro">A vossa presença no nosso grande dia é, para nós, o presente mais bonito. Mas se quiserem oferecer-nos algo mais, podem contribuir para a nossa lua de mel — adoraríamos levar-vos connosco em cada passo desta viagem.</p>
 
         <ol class="route">
           <li class="route__stop">
@@ -97,7 +106,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15.5v-1.7l-8-4.6V3.6a1.5 1.5 0 00-3 0v5.6l-8 4.6v1.7l8-2.4v4.1l-2 1.4v1.3l3.5-1 3.5 1v-1.3l-2-1.4v-4.1l8 2.4z"/></svg>
             </span>
             <span class="route__place">Porto → Los Angeles</span>
-            <span class="route__note">O início da aventura</span>
+            <span class="route__note" data-i18n="stopLaNote">O início da aventura</span>
           </li>
           <li class="route__stop">
             <span class="route__num">04</span>
@@ -105,7 +114,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.4L19.5 9l-4.5 3.4L16.6 18 12 14.8 7.4 18l1.6-5.6L4.5 9l5.6-.6z"/><path d="M5 4.5l.01.01M19.5 5l.01.01M20 19l.01.01"/></svg>
             </span>
             <span class="route__place">Las Vegas</span>
-            <span class="route__note">O que acontece em Vegas fica em Vegas</span>
+            <span class="route__note" data-i18n="stopVegasNote">O que acontece em Vegas fica em Vegas</span>
           </li>
           <li class="route__stop">
             <span class="route__num">05</span>
@@ -113,23 +122,23 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 19l5.5-9 3.2 4.4L15 8l6.5 11z"/><circle cx="17.5" cy="6" r="1.7"/></svg>
             </span>
             <span class="route__place">Grand Canyon</span>
-            <span class="route__note">Diante de uma maravilha do mundo</span>
+            <span class="route__note" data-i18n="stopCanyonNote">Diante de uma maravilha do mundo</span>
           </li>
           <li class="route__stop">
             <span class="route__num">03</span>
             <span class="route__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 19h20"/><path d="M6 19V7M18 19V7"/><path d="M2 13c2.5-3.5 6-3.5 6-3.5M22 13c-2.5-3.5-6-3.5-6-3.5M6 8c2.4 1.4 4.2 1.9 6 1.9s3.6-.5 6-1.9"/><path d="M10 19v-4M14 19v-4"/></svg>
             </span>
-            <span class="route__place">São Francisco</span>
-            <span class="route__note">A cidade da ponte mais famosa</span>
+            <span class="route__place" data-i18n="stopSf">São Francisco</span>
+            <span class="route__note" data-i18n="stopSfNote">A cidade da ponte mais famosa</span>
           </li>
           <li class="route__stop">
             <span class="route__num">02</span>
             <span class="route__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13.5l1.7-4.3A2 2 0 016.6 8h10.8a2 2 0 011.9 1.2L21 13.5"/><path d="M2 13.5h20v3.5a1 1 0 01-1 1h-1.2a2 2 0 01-3.8 0H8a2 2 0 01-3.8 0H3a1 1 0 01-1-1v-3.5z"/><path d="M6.5 16h.01M17.5 16h.01"/></svg>
             </span>
-            <span class="route__place">Costa do Pacífico</span>
-            <span class="route__note">Road trip pela estrada mais bonita</span>
+            <span class="route__place" data-i18n="stopPacific">Costa do Pacífico</span>
+            <span class="route__note" data-i18n="stopPacificNote">Road trip pela estrada mais bonita</span>
           </li>
           <li class="route__stop">
             <span class="route__num">06</span>
@@ -137,7 +146,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V9.5"/><path d="M12 9.5c-.5-2.8-3.6-4.4-6.4-3.3 1-2.8 4.6-3 6.4-.7 1.8-2.3 5.4-2.1 6.4.7-2.8-1.1-5.9.5-6.4 3.3z"/><path d="M3 21c2.2-2.6 5.6-2.6 9-2.6s6.8 0 9 2.6"/></svg>
             </span>
             <span class="route__place">Hawaii</span>
-            <span class="route__note">O paraíso para terminar</span>
+            <span class="route__note" data-i18n="stopHawaiiNote">O paraíso para terminar</span>
           </li>
         </ol>
 
@@ -145,7 +154,7 @@
           <!-- TODO: substituir pelos vossos dados reais (IBAN e número MB WAY) — ver README.md -->
           <div class="gift__methods">
             <div class="gift__method">
-              <span class="gift__label">Transferência bancária</span>
+              <span class="gift__label" data-i18n="bankTransfer">Transferência bancária</span>
               <span class="gift__value">PT50 3560 0001 9109 9703 9065 5</span>
               <span class="gift__holder">João &amp; Sofia</span>
             </div>
@@ -155,7 +164,7 @@
               <span class="gift__holder">João &amp; Sofia</span>
             </div>
           </div>
-          <p class="gift__thanks">Obrigado ♥</p>
+          <p class="gift__thanks" data-i18n="thanks">Obrigado ♥</p>
         </div>
       </div>
     </div>
@@ -163,56 +172,57 @@
 
   <!-- RSVP -->
   <div class="overlay" id="rsvp" role="dialog" aria-modal="true" aria-labelledby="rsvp-title" aria-hidden="true">
-    <a class="overlay__backdrop" href="#" data-close aria-label="Fechar"></a>
+    <a class="overlay__backdrop" href="#" data-close data-i18n-aria="close" aria-label="Fechar"></a>
     <div class="overlay__panel">
-      <a class="overlay__close" href="#" data-close aria-label="Fechar">&times;</a>
+      <a class="overlay__close" href="#" data-close data-i18n-aria="close" aria-label="Fechar">&times;</a>
       <div class="overlay__scroll">
-        <p class="section__eyebrow">Contamos consigo</p>
-        <h2 class="section__title" id="rsvp-title">Confirme a sua presença</h2>
+        <p class="section__eyebrow" data-i18n="rsvpEyebrow">Contamos consigo</p>
+        <h2 class="section__title" id="rsvp-title" data-i18n="rsvpTitle">Confirme a sua presença</h2>
         <div class="divider">
           <span class="divider__line"></span>
           <span class="divider__diamond">◆</span>
           <span class="divider__line"></span>
         </div>
-        <p class="rsvp__note">Por favor confirme até <strong>10 de Setembro de 2026</strong>.</p>
+        <p class="rsvp__note" data-i18n-html="rsvpNote">Por favor confirme até <strong>10 de Setembro de 2026</strong>.</p>
         <form class="form" action="https://formspree.io/f/mkolppqv" method="POST">
           <div class="form__row">
             <div class="form__field">
-              <label for="nome">Nome *</label>
+              <label for="nome" data-i18n="fieldName">Nome *</label>
               <input type="text" id="nome" name="nome" required autocomplete="name">
             </div>
             <div class="form__field">
-              <label for="email">Email *</label>
+              <label for="email" data-i18n="fieldEmail">Email *</label>
               <input type="email" id="email" name="email" required autocomplete="email">
             </div>
           </div>
           <div class="form__row">
             <div class="form__field">
-              <span class="form__legend">Vai estar presente? *</span>
+              <span class="form__legend" data-i18n="fieldAttend">Vai estar presente? *</span>
               <div class="form__radios">
-                <label class="form__radio"><input type="radio" name="presenca" value="Sim, conto estar presente" required> Sim, claro!</label>
-                <label class="form__radio"><input type="radio" name="presenca" value="Infelizmente não posso"> Infelizmente não</label>
+                <label class="form__radio"><input type="radio" name="presenca" value="Sim, conto estar presente" required> <span data-i18n="attendYes">Sim, claro!</span></label>
+                <label class="form__radio"><input type="radio" name="presenca" value="Infelizmente não posso"> <span data-i18n="attendNo">Infelizmente não</span></label>
               </div>
             </div>
             <div class="form__field">
-              <label for="acompanhantes">Nº de acompanhantes</label>
+              <label for="acompanhantes" data-i18n="fieldGuests">Nº de acompanhantes</label>
               <input type="number" id="acompanhantes" name="acompanhantes" min="0" max="10" value="0">
             </div>
           </div>
           <div class="form__field">
-            <label for="restricoes">Restrições alimentares</label>
-            <input type="text" id="restricoes" name="restricoes" placeholder="Vegetariano, alergias, …">
+            <label for="restricoes" data-i18n="fieldDiet">Restrições alimentares</label>
+            <input type="text" id="restricoes" name="restricoes" data-i18n-placeholder="dietPlaceholder" placeholder="Vegetariano, alergias, …">
           </div>
           <div class="form__field">
-            <label for="mensagem">Mensagem para os noivos</label>
-            <textarea id="mensagem" name="mensagem" rows="3" placeholder="Deixe-nos umas palavras ♥"></textarea>
+            <label for="mensagem" data-i18n="fieldMessage">Mensagem para os noivos</label>
+            <textarea id="mensagem" name="mensagem" rows="3" data-i18n-placeholder="messagePlaceholder" placeholder="Deixe-nos umas palavras ♥"></textarea>
           </div>
-          <button class="btn btn--solid" type="submit">Confirmar presença</button>
+          <button class="btn btn--solid" type="submit" data-i18n="rsvpAction">Confirmar presença</button>
         </form>
       </div>
     </div>
   </div>
 
+  <script src="js/i18n.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
