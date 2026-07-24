@@ -78,3 +78,60 @@ document.querySelectorAll("[data-close]").forEach((el) => {
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeOverlay();
 });
+
+// ===== Copiar dados de pagamento (IBAN / MB WAY) =====
+// Toca no valor para copiar; mostra uma confirmação breve e traduzida.
+function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard.writeText(text);
+  }
+  // Alternativa para contextos não seguros / navegadores antigos
+  return new Promise((resolve, reject) => {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "absolute";
+    ta.style.left = "-9999px";
+    document.body.appendChild(ta);
+    ta.select();
+    let ok = false;
+    try { ok = document.execCommand("copy"); } catch (_) { ok = false; }
+    document.body.removeChild(ta);
+    ok ? resolve() : reject();
+  });
+}
+
+let copyToastTimer;
+function showCopyToast(msg) {
+  let toast = document.getElementById("copyToast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.id = "copyToast";
+    toast.className = "copy-toast";
+    toast.setAttribute("role", "status");
+    toast.setAttribute("aria-live", "polite");
+    document.body.appendChild(toast);
+  }
+  toast.textContent = msg;
+  toast.classList.add("is-visible");
+  clearTimeout(copyToastTimer);
+  copyToastTimer = setTimeout(() => toast.classList.remove("is-visible"), 2000);
+}
+
+function copiedLabel() {
+  const lang = document.documentElement.lang === "en" ? "en" : "pt";
+  return (typeof I18N !== "undefined" && I18N[lang] && I18N[lang].copied) || "Copiado!";
+}
+
+document.querySelectorAll("[data-copy]").forEach((btn) => {
+  const textEl = btn.querySelector(".gift__copy-text") || btn;
+  btn.addEventListener("click", () => {
+    copyText(textEl.textContent.trim())
+      .then(() => {
+        showCopyToast(copiedLabel());
+        btn.classList.add("is-copied");
+        setTimeout(() => btn.classList.remove("is-copied"), 1500);
+      })
+      .catch(() => { /* silencioso: o valor continua visível para cópia manual */ });
+  });
+});
